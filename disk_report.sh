@@ -1,8 +1,9 @@
 #!/bin/bash
-# 1. Update script diam-diam (semua output dibuang)
+# Update diam-diam tanpa suara sedikitpun
 git pull origin main > /dev/null 2>&1
 
-# 2. Ambil data storage (Format: Size Used Avail Use%)
-# Kita panggil satu per satu agar hasilnya pasti 2 baris bersih
+# Tampilkan data System Drive (Baris 1)
 df -h / --output=size,used,avail,pcent | grep -v "Size"
+
+# Tampilkan data HDD Storage (Baris 2)
 df -h /mnt/Storage1 --output=size,used,avail,pcent | grep -v "Size"
